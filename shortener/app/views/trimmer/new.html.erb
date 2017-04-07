@@ -1,0 +1,5 @@
+<%= form_for @trimmer, url: {action: "create"} do |f| %>
+  <%= f.label "Enter your long URL here" %>
+  <%= f.text_area :long_url %>
+  <%= f.submit "Create" %>
+<% end %>

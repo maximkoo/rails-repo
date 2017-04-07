@@ -1,0 +1,11 @@
+<h1>Picture#index</h1>
+<p>Find me in app/views/picture/index.html.erb</p>
+<table>
+<%@pictures.each do |x|%>
+<tr>
+<td><%=x.image.url%></td>
+<td><%=image_tag x.image.url%></td>
+</tr>
+<%end%>
+</table>
+<%= link_to "Больше картинок!",:picture_new%>

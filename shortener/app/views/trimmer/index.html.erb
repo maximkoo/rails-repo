@@ -1,0 +1,14 @@
+<h1>Trimmers#index</h1>
+<p>Find me in app/views/trimmers/index.html.erb</p>
+<table>
+<%@trimmers.each do |t|%>
+<tr>
+<td>
+	<%=link_to "Перейти к #{t.short_url}", {:action=>:show, :id=> t.short_url} %>
+</td>
+</tr>
+<%end%>	
+</table>
+
+<hr>
+<%= link_to "Create new", action: "new" %>

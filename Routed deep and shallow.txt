@@ -1,0 +1,73 @@
+      Prefix Verb URI     Pattern                                      Controller#Action
+
+    street_houses GET    /streets/:street_id/houses(.:format)          houses#index
+                  POST   /streets/:street_id/houses(.:format)          houses#create
+ new_street_house GET    /streets/:street_id/houses/new(.:format)      houses#new
+edit_street_house GET    /streets/:street_id/houses/:id/edit(.:format) houses#edit
+     street_house GET    /streets/:street_id/houses/:id(.:format)      houses#show
+                  PATCH  /streets/:street_id/houses/:id(.:format)      houses#update
+                  PUT    /streets/:street_id/houses/:id(.:format)      houses#update
+                  DELETE /streets/:street_id/houses/:id(.:format)      houses#destroy
+          streets GET    /streets(.:format)                            streets#index
+                  POST   /streets(.:format)                            streets#create
+       new_street GET    /streets/new(.:format)                        streets#new
+      edit_street GET    /streets/:id/edit(.:format)                   streets#edit
+           street GET    /streets/:id(.:format)                        streets#show
+                  PATCH  /streets/:id(.:format)                        streets#update
+                  PUT    /streets/:id(.:format)                        streets#update
+                  DELETE /streets/:id(.:format)                        streets#destroy
+
+          Prefix Verb   URI Pattern                              Controller#Action
+
+   street_houses GET    /streets/:street_id/houses(.:format)     houses#index
+                 POST   /streets/:street_id/houses(.:format)     houses#create
+new_street_house GET    /streets/:street_id/houses/new(.:format) houses#new
+      edit_house GET    /houses/:id/edit(.:format)               houses#edit
+           house GET    /houses/:id(.:format)                    houses#show
+                 PATCH  /houses/:id(.:format)                    houses#update
+                 PUT    /houses/:id(.:format)                    houses#update
+                 DELETE /houses/:id(.:format)                    houses#destroy
+         streets GET    /streets(.:format)                       streets#index
+                 POST   /streets(.:format)                       streets#create
+      new_street GET    /streets/new(.:format)                   streets#new
+     edit_street GET    /streets/:id/edit(.:format)              streets#edit
+          street GET    /streets/:id(.:format)                   streets#show
+                 PATCH  /streets/:id(.:format)                   streets#update
+                 PUT    /streets/:id(.:format)                   streets#update
+                 DELETE /streets/:id(.:format)                   streets#destroy
+
+           Prefix Verb   URI Pattern                                  Controller#Action
+              root GET    /                                            streets#index
+        houses_all GET    /houses/all(.:format)                        houses#index_all
+     street_houses GET    /streets/:street_id/houses(.:format)         houses#index
+                   POST   /streets/:street_id/houses(.:format)         houses#create
+  new_street_house GET    /streets/:street_id/houses/new(.:format)     houses#new
+        edit_house GET    /houses/:id/edit(.:format)                   houses#edit
+             house GET    /houses/:id(.:format)                        houses#show
+                   PATCH  /houses/:id(.:format)                        houses#update
+                   PUT    /houses/:id(.:format)                        houses#update
+                   DELETE /houses/:id(.:format)                        houses#destroy
+           streets GET    /streets(.:format)                           streets#index
+                   POST   /streets(.:format)                           streets#create
+        new_street GET    /streets/new(.:format)                       streets#new
+       edit_street GET    /streets/:id/edit(.:format)                  streets#edit
+            street GET    /streets/:id(.:format)                       streets#show
+                   PATCH  /streets/:id(.:format)                       streets#update
+                   PUT    /streets/:id(.:format)                       streets#update
+                   DELETE /streets/:id(.:format)                       streets#destroy
+   district_houses GET    /districts/:district_id/houses(.:format)     houses#index
+                   POST   /districts/:district_id/houses(.:format)     houses#create
+new_district_house GET    /districts/:district_id/houses/new(.:format) houses#new
+                   GET    /houses/:id/edit(.:format)                   houses#edit
+                   GET    /houses/:id(.:format)                        houses#show
+                   PATCH  /houses/:id(.:format)                        houses#update
+                   PUT    /houses/:id(.:format)                        houses#update
+                   DELETE /houses/:id(.:format)                        houses#destroy
+         districts GET    /districts(.:format)                         districts#index
+                   POST   /districts(.:format)                         districts#create
+      new_district GET    /districts/new(.:format)                     districts#new
+     edit_district GET    /districts/:id/edit(.:format)                districts#edit
+          district GET    /districts/:id(.:format)                     districts#show
+                   PATCH  /districts/:id(.:format)                     districts#update
+                   PUT    /districts/:id(.:format)                     districts#update
+                   DELETE /districts/:id(.:format)                     districts#destroy

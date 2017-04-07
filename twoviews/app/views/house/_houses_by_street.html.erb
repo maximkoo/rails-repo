@@ -1,0 +1,3 @@
+<%@houses.each do |rec|%>
+  Дом <%= rec.num%> <%="корпус" if !rec.num_extra.nil?%> <%=rec.num_extra%><br>
+<%end%>

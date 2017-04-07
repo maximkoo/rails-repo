@@ -1,0 +1,6 @@
+<%@ppl.each do |rec|%>
+  <%= link_to rec.name, {:action => 'trololo', :id => rec.id} %>
+  <%= link_to "Show this guy", {:action=>'show', :id=>rec.id} %>
+  <br>
+<%end%>
+

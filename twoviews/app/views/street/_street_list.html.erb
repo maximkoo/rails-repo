@@ -1,0 +1,3 @@
+<%@streets.each do |s| %>
+<%=link_to s.name, {action: 'index', controller:'street', street_id: s.id} %><br>
+<%end%>

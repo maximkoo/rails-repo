@@ -1,0 +1,46 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+house1: 
+  num: 1
+  num_extra: 5
+  street: one
+house2: 
+  num: 2
+  num_extra: Г
+  street: two
+house3: 
+  num: 3
+  num_extra: 
+  street: three
+house4: 
+  num: 5
+  num_extra: 
+  street: four
+house5: 
+  num: 50
+  num_extra: 
+  street: four
+house6: 
+  num: 11
+  num_extra: 
+  street: three
+house7: 
+  num: 96
+  num_extra: 1a
+  street: two
+house8: 
+  num: 3
+  num_extra: 1
+  street: one
+house9: 
+  num: 15
+  num_extra: б
+  street: two 
+house10: 
+  num: 25
+  num_extra: 
+  street: three       

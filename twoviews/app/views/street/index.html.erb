@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<style type="text/css">
+	.c1{
+		width: 40%; /* ширина */
+    	background: #ccc; /* фон светло-серый */
+    	padding: 5px;/* отступ текста от края блока */
+	    padding-right: 20px; /* отступ текста справа */
+	    border: solid 1px black; /* граница в один пиксель черная */
+	    float: left;/* справа от предыдущего элемента, которого нет*/
+	    font-family: Tahoma;
+	    font-weight: bold;
+		}
+	.c2{
+		width: 200px; /* ширина */
+	    background: #fc0; /* цвет жолтый */
+	    padding: 5px; /* отступ текста от края блока */
+	    border: solid 1px black; /* граница в один пиксель черная */
+	    float: left; /* справа от предыдущего элемента */
+	    position: relative; /* координаты указаны отнсоительно предыщего блока */
+	    top: 40px; /* на 40 пикселей ниже предыдущего блока */
+	    left: -70px; /* на 70 пикселей наползает на предыдущий блок */
+	    font-family: Segoe Script;
+		}	
+</style>
+<html>
+	<div class="c1">
+	<%=render 'street_list'%> <!-- Партиал -->
+	</div>
+	<div class="c2">
+	<%=render :partial =>'house/houses_by_street' %> <!-- Партиал -->
+	</div>
+	<%=link_to "TO SHOW", {action: 'show', controller:'street'} %><br>
+</html>

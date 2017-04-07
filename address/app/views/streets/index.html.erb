@@ -1,0 +1,6 @@
+<%@streets.each do |s| %>
+<%=link_to s.name, {action: 'index', controller:'houses', street_id: s.id} %><br>
+<%end%>
+<br>
+<%=link_to "Показать все дома", {:controller=>'houses', :action=>'index_all'} %><br>
+<%=link_to "Список районов", {:controller=>'districts', :action=>'index'} %>

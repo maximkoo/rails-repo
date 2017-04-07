@@ -1,0 +1,22 @@
+<div style="background-color:tan; 
+            font-family:tahoma; 
+            font-weight:bold;">
+<h2 style="color:navy"><%=if @parent.key?('street') 
+	                      then @parent['street'].name; 
+	                      end;
+	                      if @parent.key?('district') 
+	                      then @parent['district'].name; 
+	                      end;
+	                      %></h2>
+<div style="padding-top: 100px;
+			padding-bottom: 100px; 
+            color:brown;
+            width:60%; 
+            margin:auto; 
+            text-align: center">
+<% @houses.each do |s| %>
+<%="Дом номер #{s.num}#{s.num_extra}" %><br>
+<% end %>
+</div>
+<%=link_to "Создать новый дом", {action: 'new', controller: 'houses'}%>
+</div>

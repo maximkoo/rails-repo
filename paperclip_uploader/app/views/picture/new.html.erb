@@ -1,0 +1,10 @@
+<h1>Picture#new</h1>
+<p>Find me in app/views/picture/new.html.erb</p>
+<%= form_for @picture, url:picture_create_url, html: {multipart:true} do |form| %>
+<%= form.file_field :image %>
+<%=form.submit "Загрузить"%>
+<br>
+<div style="background-color:red">
+	<%=@errm%>
+</div>
+<% end %>
