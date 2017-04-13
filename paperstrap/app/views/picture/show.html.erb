@@ -1,0 +1,12 @@
+<ol class="breadcrumb">
+ 	<li><a href="<%=picture_index_path%>">Pictures</a></li>
+  	<li><a href="#">New</a></li>
+</ol>
+<div class="jumbotron" align="center">
+<h1>Picture#show</h1>
+<p>Find me in app/views/picture/show.html.erb</p>
+</div>
+<%=image_tag @picture.image.url(:meduim)%>
+<br>
+<%puts "ID==============#{@picture.id}"%>
+<%=link_to 	"Дропнуть", :drop_that_stuff, class: 'btn btn-large btn-primary',	id: @picture.id	%>
