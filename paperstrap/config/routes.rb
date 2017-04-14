@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   post 'picture/update'
 
-  get 'picture/destroy/:id' => 'picture#destroy', as: 'drop_that_stuff'
+  delete 'picture/destroy/:id' => 'picture#destroy', as: 'drop_that_stuff'
 
   get 'picture/index'=>'picture#index'
 

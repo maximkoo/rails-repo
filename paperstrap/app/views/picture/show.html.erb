@@ -9,4 +9,8 @@
 <%=image_tag @picture.image.url(:meduim)%>
 <br>
 <%puts "ID==============#{@picture.id}"%>
-<%=link_to 	"Дропнуть", :drop_that_stuff, class: 'btn btn-large btn-primary',	id: @picture.id	%>
+<%=link_to 	"Дропнуть", :drop_that_stuff, class: 'btn btn-large btn-primary',id: @picture.id, method: "delete"	%>
+<!-- Такое впечатление, что надо либо 
+а) в роутах указывать для destroy метод get и тогда здесь метод не указывать
+либо
+б) там указывать метод delete и здесь тоже явно передавать method-->

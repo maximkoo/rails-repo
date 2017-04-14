@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="page-header" align="center">
+	<h1>The uppermost part<br><small>Find me at views/layouts/application.html.erb</small></h1>
+	<%= link_to "Log in", :picture_new, class: 'btn btn-large btn-primary' %>
+</div>
 <%= yield %>
 
 </body>
