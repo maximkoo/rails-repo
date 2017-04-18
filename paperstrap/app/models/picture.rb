@@ -5,4 +5,8 @@ class Picture < ActiveRecord::Base
 						:url => "/images/:basename.:extension"
 	validates_attachment_content_type 	:image, 
 										:content_type=> ["image/jpeg","image/png"]
+
+	def model_method
+		return "This string has been returned by model_method in Picture MODEL file"
+	end;									
 end

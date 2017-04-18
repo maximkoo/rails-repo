@@ -1,0 +1,46 @@
+https://www.rubyplus.com/articles/3451-Has-Many-Through-and-Has-and-Belongs-to-Many-in-Rails-5
+
+http://joshfrankel.me/blog/2016/how-to/create-a-many-to-many-activerecord-association-in-ruby-on-rails/
+
+Вкратце: есть две сущности, "автор" и "книга". Авторы пишут много книг, в создании одной книги могут принимать участие разные авторы.
+
+Развязочная таблица между авторами и книгами никакую сущность не описывает и модели в Rails не имеет (есть ещё другой случай, где развязочная таблица - отдельная сущность/модель).
+
+rails generate model Author name:string
+rails generate model Book title:string
+
+Теперь создаем миграцию для развязочной таблицы (не модель!)
+rails g migration CreateJoinTableAuthorBook
+(там еще надо раскомментить строчку для создания индекса)
+
+(или еще можно rails g migration CreateAuthorsBooks Authors:references Books:references)
+
+запускаем миграцию 
+rake db:migrate
+
+получается три таблицы: AUTHORS, BOOKS и AUTHORS_BOOKS(author_id, book_id)
+
+Потом надо в моделях прописать
+
+AUTHOR.rb has_and_belongs_to_many :books
+BOOK.rb has_and_belongs_to_many :authors
+
+И типа все работает
+
+добавляем автора
+
+Author.create(:name=>"Pupkin").save
+
+Добавляем книгу
+
+Book.create(:title=>"The Greatest Book Ever").save
+
+Добавляем книгу для последнего добавленного автора
+
+Author.all.last.books.create(:title=>"The Worst Book Ever").save
+
+(аналогично автора для последней книги)
+
+Добавляем сразу автора и книгу
+
+Author.create(:name=>"Ololoev").books.create(:title=>"The Ololo Book").save

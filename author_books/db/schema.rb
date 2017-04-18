@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417143719) do
+ActiveRecord::Schema.define(version: 20170418135719) do
+
+  create_table "authors", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "authors_books", id: false, force: :cascade do |t|
+    t.integer "author_id", precision: 38, null: false
+    t.integer "book_id",   precision: 38, null: false
+  end
+
+  add_index "authors_books", ["author_id", "book_id"], name: "i_aut_boo_aut_id_boo_id"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "pictures", force: :cascade do |t|
     t.datetime "created_at",                        null: false
@@ -21,6 +46,23 @@ ActiveRecord::Schema.define(version: 20170417143719) do
     t.integer  "image_file_size",    precision: 38
     t.datetime "image_updated_at"
   end
+
+  create_table "programmers", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "mission"
+    t.integer  "programmer_id", precision: 38
+    t.integer  "client_id",     precision: 38
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_index "projects", ["client_id"], name: "index_projects_on_client_id"
+  add_index "projects", ["programmer_id"], name: "i_projects_programmer_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                                 default: "", null: false
@@ -40,4 +82,6 @@ ActiveRecord::Schema.define(version: 20170417143719) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "i_users_reset_password_token", unique: true
 
+  add_foreign_key "projects", "clients"
+  add_foreign_key "projects", "programmers"
 end

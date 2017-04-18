@@ -1,24 +1,4 @@
 Rails.application.routes.draw do
-  
-
-  devise_for :users
-
-  get 'picture/index'=>'picture#index'
-
-  get 'picture/new'
-
-  post 'picture/create'
-
-  get 'picture/edit'
-
-  post 'picture/update'
-
-  delete 'picture/destroy/:id' => 'picture#destroy', as: 'drop_that_stuff'
-
-  
-
-  get 'picture/show/:id'=>'picture#show'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

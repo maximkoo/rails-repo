@@ -55,4 +55,8 @@ class PictureController < ApplicationController
   def show
     @picture=Picture.find_by_id(params[:id])
   end
+
+  def contr_method
+    return "This string has been returned by contr_method in picture_controller.rb file"
+  end; 
 end

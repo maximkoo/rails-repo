@@ -1,6 +1,6 @@
 <ol class="breadcrumb">
  	<li><a href="<%=picture_index_path%>">Pictures</a></li>
-  	<li><a href="#">New</a></li>
+  	<li><a href="<%=picture_new_path%>">New</a></li>
 </ol>
 <div class="jumbotron" align="center">
 <h1>Picture#show</h1>
@@ -9,8 +9,10 @@
 <%=image_tag @picture.image.url(:meduim)%>
 <br>
 <%puts "ID==============#{@picture.id}"%>
+<p><%= @picture.model_method%></p>
 <%=link_to 	"Дропнуть", :drop_that_stuff, class: 'btn btn-large btn-primary',id: @picture.id, method: "delete"	%>
 <!-- Такое впечатление, что надо либо 
 а) в роутах указывать для destroy метод get и тогда здесь метод не указывать
 либо
 б) там указывать метод delete и здесь тоже явно передавать method-->
+
