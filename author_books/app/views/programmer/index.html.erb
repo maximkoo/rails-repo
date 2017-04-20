@@ -1,0 +1,12 @@
+<div id="programmers"><%= render 'programmers' %></div>
+<br>
+<p>Previous page is <%=@programmers.previous_page%></p>
+<p>Current page is <%=@programmers.current_page%></p>
+<p>Next page is <%=@programmers.next_page%></p>
+
+<%= form_tag programmer_index_path, :method=>'get', :id=>'programmers_search' do%>
+<p>
+<%= text_field_tag :search, :params["search"] %>
+<%= submit_tag "Search" %>
+</p>
+<%end%>
