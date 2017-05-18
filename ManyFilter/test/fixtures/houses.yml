@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  house_num: 1
+  house_num_extra: MyString
+  height: 1
+  color: MyString
+  description: MyString
+  street_id: 
+
+two:
+  house_num: 1
+  house_num_extra: MyString
+  height: 1
+  color: MyString
+  description: MyString
+  street_id: 
